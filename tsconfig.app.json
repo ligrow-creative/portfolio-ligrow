@@ -1,0 +1,21 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["env.d.ts", "src/**/*.ts", "src/**/*.vue"],
+  "exclude": ["src/**/__tests__/*", "node_modules", "dist"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src"]
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "allowJs": true, // JavaScriptファイルをコンパイルする
+    "allowSyntheticDefaultImports": true /* import x from yの形式を許可 */,
+    "forceConsistentCasingInFileNames": true /* ファイル名の大文字と小文字を区別する */,
+    "noImplicitThis": true /* thisキーワードがany型として扱われた場合にエラーを報告 */,
+    "skipLibCheck": true /*d.tsファイルの型チェックをスキップ→高速化 */,
+    "verbatimModuleSyntax": false /* 型モジュール（d.tsファイル）と値モジュール（.jsファイルなど）を同じようにインポートすることを許可*/,
+    "noImplicitReturns": true, // 全ての関数が値を返すことが期待
+    "noUnusedParameters": true, // 未使用の関数の引数にエラー
+    "types": ["node"]
+  }
+}

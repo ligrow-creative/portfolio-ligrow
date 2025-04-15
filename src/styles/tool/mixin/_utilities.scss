@@ -1,0 +1,71 @@
+@use 'sass:string';
+@use 'sass:math';
+@use '@/styles/setting/variable/easing' as ease;
+@use '@/styles/setting/variable/color' as c;
+@use '@/styles/tool/function/convert' as cv;
+@use './media' as mq;
+
+@mixin clearfix {
+  &::after {
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    content: '.';
+  }
+}
+
+@mixin transition($duration, $target: all, $delay: 0s, $easing: ease.$base) {
+  transition: $target $duration $easing $delay;
+}
+
+@mixin transition-hover(
+  $target: all,
+  $duration: 0.45s,
+  $delay: 0s,
+  $easing: ease-in-out-cubic
+) {
+  transition: $duration $easing $delay;
+  transition-property: string.unquote($target);
+}
+
+@mixin contents-in($direction: null, $trigger-class: 'is-inview', $self: true) {
+  $this: &;
+
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 1s ease.$base,
+    transform 1s ease.$base;
+  will-change: hidden, opacity, transform;
+
+  @if $direction == right {
+    transform: translateX(cv.rem(10));
+  } @else if $direction == top {
+    transform: translateY(cv.rem(-10));
+  } @else if $direction == bottom {
+    transform: translateY(cv.rem(10));
+  } @else if $direction == left {
+    transform: translateX(cv.rem(-10));
+  }
+
+  @if $self {
+    &.#{$trigger-class} {
+      visibility: visible;
+      opacity: 1;
+
+      @if $direction {
+        transform: translateZ(0);
+      }
+    }
+  } @else {
+    .#{$trigger-class} & {
+      visibility: visible;
+      opacity: 1;
+
+      @if $direction {
+        transform: translateZ(0);
+      }
+    }
+  }
+}

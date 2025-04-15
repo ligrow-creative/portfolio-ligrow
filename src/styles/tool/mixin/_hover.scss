@@ -1,0 +1,21 @@
+@use 'sass:math';
+@use '@/styles/setting/variable/color' as c;
+@use '@/styles/tool/function/convert' as cv;
+@use './utilities' as mixin;
+@use './media' as mq;
+
+@mixin alpha($color: c.$secondary, $self: true) {
+  @include mq.pc {
+    @include mixin.transition-hover(color);
+
+    @if $self == true {
+      &.is-hover {
+        color: $color;
+      }
+    } @else {
+      .is-hover & {
+        color: $color;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+/* reset */
+@use '@/../node_modules/ress/dist/ress.min.css';
+@use 'reset';
+
+/* root */
+@use 'vars';
+@use 'base';

@@ -1,0 +1,4 @@
+@use 'sass:math';
+
+$body-pc: math.div(30, 14);
+$body-sp: math.div(30, 13);

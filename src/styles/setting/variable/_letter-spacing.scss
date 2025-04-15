@@ -1,0 +1,15 @@
+@use 'sass:math';
+
+/* util */
+$zero: 0;
+$base: 0.07em;
+$narrow: 0.01em;
+$half: math.div($base, 2);
+$double: $base * 2;
+$triple: $base * 3;
+$quad: $base * 4;
+$quin: $base * 5;
+$sex: $base * 6;
+
+/* project specific */
+$default: $base;

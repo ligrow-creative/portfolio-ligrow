@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: myicon;
+  src:
+    url('../fonts/myicon.woff2?a37f5a05827a29418b121121441d4963')
+      format('woff2'),
+    url('../fonts/myicon.woff?a37f5a05827a29418b121121441d4963') format('woff');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+.myicon {
+  display: inline-block;
+  font-family: myicon;
+  font-style: normal;
+  font-weight: normal;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.myicon-location::before {
+  content: '\F101';
+}
+.myicon-mail::before {
+  content: '\F101';
+}
+.myicon-human::before {
+  content: '\F101';
+}

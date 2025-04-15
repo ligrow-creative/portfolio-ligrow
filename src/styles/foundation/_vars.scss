@@ -1,0 +1,21 @@
+@use 'sass:math';
+@use '@/styles/setting/variable' as var;
+@use '@/styles/tool/function' as func;
+@use '@/styles/tool/mixin' as mixin;
+
+
+
+:root {
+  --beige: #e6ddd2;
+  --beige: #BBBDB3;
+  // --beige: #CACCBE;
+
+  --gray: #000;
+  // --card-bg-1: #eee7e0;
+  // --card-bg-2:#dbd2c8;
+  --card-bg-1: #000000;
+  --card-bg-2:#353535;
+
+  --green: #BDFF00;
+  --cubic: cubic-bezier(.86,0,.07,1);
+}

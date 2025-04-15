@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+    "noEmit": true,
+    "allowJs": true, // JavaScriptファイルをコンパイルする
+    "esModuleInterop": true, // ECMAScriptモジュールとの相互運用性
+    "allowSyntheticDefaultImports": true /* import x from yの形式を許可 */,
+    "forceConsistentCasingInFileNames": true /* ファイル名の大文字と小文字を区別する */,
+    "noImplicitThis": true /* thisキーワードがany型として扱われた場合にエラーを報告 */,
+    "skipLibCheck": true /*d.tsファイルの型チェックをスキップ→高速化 */,
+    "verbatimModuleSyntax": false /* 型モジュール（d.tsファイル）と値モジュール（.jsファイルなど）を同じようにインポートすることを許可*/,
+    "noImplicitReturns": true, // 全ての関数が値を返すことが期待
+    "noUnusedParameters": true // 未使用の関数の引数にエラー
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "./src/**/*.vue",
+    "./src/**/*.ts",
+    "vite.config.ts",
+    "vitest-setup.ts",
+    "*.config.mjs",
+    "src/__stories__/**/*.ts",
+    "src/__test__/**/*/test.ts",
+    "node_modules/vitest/global.d.ts",
+    "node_modules/vue-router/**/*"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

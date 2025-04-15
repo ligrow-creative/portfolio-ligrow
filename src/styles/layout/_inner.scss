@@ -1,0 +1,27 @@
+@use 'sass:math';
+@use '../setting/variable' as var;
+@use '../tool/mixin' as mixin;
+@use '../tool/function' as func;
+
+$base-class: 'l-inner';
+
+.#{$base-class} {
+  @include mixin.mq-pc {
+    padding-left: func.cv-rem(15);
+    padding-right: func.cv-rem(15);
+  }
+}
+
+.#{$base-class}__sp {
+  @include mixin.mq-sp {
+    padding-left: func.cv-rem(10);
+    padding-right: func.cv-rem(10);
+  }
+}
+
+
+
+.#{$base-class}__wide {
+  padding-top: func.cv-rem(50);
+  padding-bottom: func.cv-rem(50);
+}

@@ -1,0 +1,68 @@
+@use '@/styles/setting/variable' as var;
+@use '@/styles/tool/function' as func;
+@use '@/styles/tool/mixin' as mixin;
+
+/*
+ * マージンに関するutilityのクラスです
+ */
+
+$prefix: 'u-margin';
+$types: 'all', 'top', 'right', 'bottom', 'left';
+
+.#{$prefix} {
+  @each $type in $types {
+    &-#{$type} {
+      @for $i from 0 through 20 {
+        @if $type == 'all' {
+          &#{$i * 5} {
+            margin: func.cv-rem($i * 5) !important;
+          }
+        } @else {
+          &#{$i * 5} {
+            margin-#{$type}: func.cv-rem($i * 5) !important;
+          }
+        }
+      }
+    }
+  }
+
+  @include mixin.mq-pc {
+    @each $type in $types {
+      &-#{$type} {
+        &-pc {
+          @for $i from 0 through 20 {
+            @if $type == 'all' {
+              &#{$i * 5} {
+                margin: func.cv-rem($i * 5) !important;
+              }
+            } @else {
+              &#{$i * 5} {
+                margin-#{$type}: func.cv-rem($i * 5) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include mixin.mq-sp {
+    @each $type in $types {
+      &-#{$type} {
+        &-sp {
+          @for $i from 0 through 20 {
+            @if $type == 'all' {
+              &#{$i * 5} {
+                margin: func.cv-rem($i * 5) !important;
+              }
+            } @else {
+              &#{$i * 5} {
+                margin-#{$type}: func.cv-rem($i * 5) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
