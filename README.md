@@ -1,40 +1,105 @@
 # portfolio-ligrow
 
 **Ligrow Creative のポートフォリオサイト フロントエンドコードです。**  
-本リポジトリはコード参考用に **閲覧専用で公開**しております。  
-**無断での使用・転載・複製・商用利用は固くお断りいたします。**
+本リポジトリはポートフォリオ目的で **閲覧専用** に公開しています。  
+**無断での使用・転載・複製・商用利用はご遠慮ください。**
 
-## 本番環境URL  
+## 🔗 サイトURL
+
 https://www.ligrow-creative.com
 
-## 目次
-- [システム構成](#システム構成)
-- [HOW TO START](#how-to-start)
-- [コマンドについて](#コマンドについて)
+## 📦 使用技術・構成
 
-## システム構成
+### フレームワーク・ビルド環境
 
-### 動作環境
-
-Node.js v22.8.0
-
-### 使用技術
-
+- [TypeScript](https://www.typescriptlang.org/) 
 - [Vue.js](https://ja.vuejs.org/)  
-- Vite  
-- SCSS / TypeScript / GSAP / Vue Router
+- [SCSS (Sass)](https://sass-lang.com/)  
+- [GSAP](https://gsap.com/)  
+- [Vite](https://ja.vite.dev/)  
 
 
-## 開発環境のセットアップ
+### 開発環境
+
+- Node.js: `v22.8.0`
+- パッケージマネージャ: `npm`
+
+## 🗂 ディレクトリ構成
+
+```bash
+portfolio-ligrow/
+├── husky/       
+├── .vscode/                
+├── certs/                
+├── public/
+│   └── assets/             
+│       └── images/
+├── src/
+│   ├── components/  
+│       ├── foundation/
+│       ├── object/
+│       └── pages/
+│   ├── constans/           
+│   ├── icons/   
+│   ├── router/     
+│   ├── scripts/ 
+│       ├── constants/
+│       ├── helper/
+│       ├── modules/
+│       ├── utilities/
+│       └── index.ts
+│   ├── styles/           
+│       ├── foundation/
+│       ├── layout/
+│       ├── object/
+│       ├── setting/
+│       ├── tool/
+│       └── app.scss
+│   ├── svg-sprite/
+│   ├── types         
+│   ├── App.vue           
+│   ├── env.d.ts       
+│   ├── main.ts    
+│   └── shims-vue.d.ts
+├── .editorconfig 
+├── .eslintignore
+├── .eslintrc.cjs     
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
+├── .stylelintrc.cjs
+├── env.d.ts         
+├── index.html          
+├── package-lock.json
+├── package.json
+├── README.md
+├── postcss.config.cjs
+├── project.config.mjs
+├── README.md
+├── tsconfig.app.json         
+├── tsconfig.json 
+├── tsconfig.node.json         
+├── tsconfig.json         
+└── vite.config.mjs      
+```
+
+## 🛠 開発環境のセットアップ
 
 ### 1.ローカル環境用の証明書発行
 
 ローカル用SSL証明書の発行（初回のみ）
 
 ```bash
+# 証明書ディレクトリへ移動
 cd certs
-brew install mkcert # mkcertが未インストールの場合
-mkcert -install # mkcertが未インストールの場合
+
+# mkcertをインストール（未インストール時のみ）
+brew install mkcert 
+
+# ルートCAをインストール（初回のみ必要、作成済ならスキップされます）
+mkcert -install 
+
+# localhost 用の証明書を生成
 mkcert -cert-file ./localhost.crt.pem -key-file ./localhost.key.pem localhost
 ```
 
@@ -53,13 +118,11 @@ npm i
 npm run dev
 ```
 
-## コマンドについて
+## 📌 コマンドについて
 
 ```bash
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm run dev`          | start local dev server                           |
-| `npm run build`        | production build for delivery                    |
-| `npm run preview`      | production build for preview up                  |
+| Command                | Action                                  |
+| :--------------------- | :---------------------------------------|
+| `npm run dev`          | start local dev server                  |
+| `npm run build`        | production build for delivery           |
 ```
-
